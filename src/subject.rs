@@ -7,6 +7,12 @@ pub struct Subject<E> {
     observers: Vec<Box<dyn Observer<E>>>,
 }
 
+impl<E> Default for Subject<E> {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl<E> Subject<E> {
     pub fn new() -> Self {
         Self { observers: vec![] }
